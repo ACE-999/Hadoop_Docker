@@ -5,6 +5,7 @@ services:
     image: bde2020/hadoop-namenode:2.0.0-hadoop2.7.4-java8
     volumes:
       - namenode:/hadoop/dfs/name
+      # - ./namenode:/etc/hadoop:rw
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -15,6 +16,7 @@ services:
     image: bde2020/hadoop-datanode:2.0.0-hadoop2.7.4-java8
     volumes:
       - datanode:/hadoop/dfs/data
+      #- ./datanode:/etc/hadoop
     env_file:
       - ./hadoop-hive.env
     environment:
